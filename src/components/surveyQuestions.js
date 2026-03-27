@@ -65,12 +65,13 @@ export const templateSurveyQuestions = [
             { id: 3, text: "En voiture - en tant que passager", next: "Q4" },
             { id: 4, text: "En covoiturage avec un autre usager du train", next: "Q4" },
             { id: 5, text: "En bus/car", next: "Q3c" },
-            { id: 6, text: "À vélo", next: "Q3d" },
-            { id: 7, text: "En trottinette", next: "Q3d" },
-            { id: 8, text: "En Taxi/VTC", next: "Q4" },
-            { id: 9, text: "En 2 roues motorisé (Moto, scooter...)", next: "Q3a" },
-            { id: 10, text: "En train - je fais une correspondance", next: "Q4" },
-            { id: 11, text: "Autre", next: "Q3_Autre" }
+            { id: 6, text: "En transport à la demande", next: "Q3d" },
+            { id: 7, text: "À vélo", next: "Q3e" },
+            { id: 8, text: "En trottinette", next: "Q3e" },
+            { id: 9, text: "En Taxi/VTC", next: "Q4" },
+            { id: 10, text: "En 2 roues motorisé (Moto, scooter...)", next: "Q3a" },
+            { id: 11, text: "En train - je fais une correspondance", next: "Q4" },
+            { id: 12, text: "Autre", next: "Q3_Autre" }
         ]
     },
 
@@ -130,8 +131,7 @@ export const templateSurveyQuestions = [
         type: 'singleChoice',
         options: [
             { id: 1, text: "Car scolaire", next: "Q4" },
-            { id: 2, text: "Transport à la demande", next: "Q4" },
-            { id: 3, text: "Autre", next: "Q3c_Autre" }
+            { id: 2, text: "Autre", next: "Q3c_Autre" }
         ]
     },
 
@@ -144,31 +144,42 @@ export const templateSurveyQuestions = [
         next: "Q4"
     },
 
-    // 🚲 Q3d - Lieu de stationnement vélo/trottinette (si Q3 = 6 ou 7)
+    // 🚌 Q3d - Service de transport à la demande (si Q3 = 6)
     {
         id: "Q3d",
-        text: "Où avez-vous stationné votre vélo/trottinette ?",
+        text: "Quel service de transport à la demande avez-vous utilisé ?",
         type: 'singleChoice',
         options: [
-            { id: 1, text: "Dans un box vélo dans le parking ouest", next: "Q3d1" },
-            { id: 2, text: "Sur un arceau sur le parvis de la gare", next: "Q3d1" },
-            { id: 3, text: "Je le transporte avec moi dans le train", next: "Q3d1" },
-            { id: 4, text: "Autre", next: "Q3d_Autre" }
+            { id: 1, text: "Taxi TILT", next: "Q4" },
+            { id: 2, text: "Mobili TILT", next: "Q4" }
         ]
     },
 
-    // 📝 Q3d - Autre stationnement vélo
+    // 🚲 Q3e - Lieu de stationnement vélo/trottinette (si Q3 = 7 ou 8)
     {
-        id: "Q3d_Autre",
+        id: "Q3e",
+        text: "Où avez-vous stationné votre vélo/trottinette ?",
+        type: 'singleChoice',
+        options: [
+            { id: 1, text: "Dans un box vélo dans le parking ouest", next: "Q3e1" },
+            { id: 2, text: "Sur un arceau sur le parvis de la gare", next: "Q3e1" },
+            { id: 3, text: "Je le transporte avec moi dans le train", next: "Q3e1" },
+            { id: 4, text: "Autre", next: "Q3e_Autre" }
+        ]
+    },
+
+    // 📝 Q3e - Autre stationnement vélo
+    {
+        id: "Q3e_Autre",
         text: "Préciser :",
         type: 'freeText',
         freeTextPlaceholder: "Préciser le lieu de stationnement...",
-        next: "Q3d1"
+        next: "Q3e1"
     },
 
-    // 🚲 Q3d1 - Type de vélo
+    // 🚲 Q3e1 - Type de vélo
     {
-        id: "Q3d1",
+        id: "Q3e1",
         text: "Quel type de vélo utilisez-vous ?",
         type: 'singleChoice',
         options: [
@@ -333,12 +344,13 @@ export const templateSurveyQuestions = [
             { id: 3, text: "En voiture - en tant que passager", next: "Q12" },
             { id: 4, text: "En covoiturage avec un autre usager du train", next: "Q12" },
             { id: 5, text: "En bus/car", next: "Q12" },
-            { id: 6, text: "À vélo", next: "Q12" },
-            { id: 7, text: "En trottinette", next: "Q12" },
-            { id: 8, text: "En Taxi/VTC", next: "Q12" },
-            { id: 9, text: "En 2 roues motorisé (Moto, scooter...)", next: "Q11a" },
-            { id: 10, text: "En train - je fais une correspondance", next: "Q12" },
-            { id: 11, text: "Autre", next: "Q11_Autre" }
+            { id: 6, text: "En transport à la demande", next: "Q12" },
+            { id: 7, text: "À vélo", next: "Q12" },
+            { id: 8, text: "En trottinette", next: "Q12" },
+            { id: 9, text: "En Taxi/VTC", next: "Q12" },
+            { id: 10, text: "En 2 roues motorisé (Moto, scooter...)", next: "Q11a" },
+            { id: 11, text: "En train - je fais une correspondance", next: "Q12" },
+            { id: 12, text: "Autre", next: "Q11_Autre" }
         ]
     },
 
